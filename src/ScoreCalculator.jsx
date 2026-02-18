@@ -82,7 +82,7 @@ export default function ScoreCalculator() {
       return (
         <div className="text-right">
           <div className="text-xs text-slate-400">期末+平時合計需</div>
-          <div className="text-xl font-bold text-blue-600">{d.neededWeighted.toFixed(1)} <span className="text-xs text-gray-400">分</span></div>
+          <div className="text-xl font-bold text-blue-600">{Math.round(d.neededWeighted)} <span className="text-xs text-gray-400">分</span></div>
           <div className="text-xs text-gray-400">各平均約 {d.avgNeeded} 分</div>
         </div>
       );
@@ -111,7 +111,7 @@ export default function ScoreCalculator() {
         {/* 頂部死當狀態 banner */}
         {isDead ? (
           <div className="bg-red-600 text-white px-4 py-2 flex items-center gap-2 text-sm font-bold">
-            <XCircle className="w-4 h-4" /> 死透透了 💀 滿分都只有 {maxPossibleScore.toFixed(1)} 分，開始準備重修吧
+            <XCircle className="w-4 h-4" /> 死透透了 💀 滿分都只有 {Math.round(maxPossibleScore)} 分，開始準備重修吧
           </div>
         ) : knownScore < 40 ? (
           <div className="bg-red-100 text-red-800 px-4 py-2 flex items-center gap-2 text-sm font-semibold border-b border-red-200">
@@ -152,7 +152,7 @@ export default function ScoreCalculator() {
             <CheckCircle className="w-6 h-6" />
             <div>
               <span className="font-bold">恭喜！安全下庄</span>
-              <p className="text-xs">總分 {knownScore.toFixed(1)} 分已超過 {targetScore} 分。</p>
+              <p className="text-xs">總分 {Math.round(knownScore)} 分已超過 {targetScore} 分。</p>
             </div>
           </div>
         );
@@ -162,7 +162,7 @@ export default function ScoreCalculator() {
             <XCircle className="w-6 h-6" />
             <div>
               <span className="font-bold">已無法達成</span>
-              <p className="text-xs">所有成績都已填入，總分 {knownScore.toFixed(1)} 分未達 {targetScore} 分。</p>
+              <p className="text-xs">所有成績都已填入，總分 {Math.round(knownScore)} 分未達 {targetScore} 分。</p>
             </div>
           </div>
         );
@@ -178,7 +178,7 @@ export default function ScoreCalculator() {
             <CheckCircle className="w-6 h-6 shrink-0 mt-0.5" />
             <div>
               <p className="font-bold text-lg">你超電！</p>
-              <p className="text-sm">光靠前兩次段考就已拿到 {examWeighted.toFixed(1)} 分，超過 {targetScore} 分門檻。</p>
+              <p className="text-sm">光靠前兩次段考就已拿到 {Math.round(examWeighted)} 分，超過 {targetScore} 分門檻。</p>
             </div>
           </div>
         );
@@ -204,7 +204,7 @@ export default function ScoreCalculator() {
           <div className="bg-white p-3 rounded border border-blue-100 text-center">
             <span className="text-gray-500 text-sm">剩餘總權重 (60分) 中需拿到</span>
             <div className="text-3xl font-bold text-blue-600 my-1">
-              {neededWeighted.toFixed(1)} <span className="text-sm text-gray-400">分</span>
+              {Math.round(neededWeighted)} <span className="text-sm text-gray-400">分</span>
             </div>
             <p className="text-xs text-gray-500">
               平均需在平時與期末各考 <strong>{Math.ceil(neededWeighted / 0.6)}</strong> 分
@@ -268,7 +268,7 @@ export default function ScoreCalculator() {
           <div>
             <p className="font-bold text-lg">死當確定 💀</p>
             <p className="text-sm">
-              即使後續全部滿分，最高得分僅 <span className="font-bold">{maxPossibleScore.toFixed(1)} 分</span>，無法越過 40 分死當線。
+              即使後續全部滿分，最高得分僅 <span className="font-bold">{Math.round(maxPossibleScore)} 分</span>，無法越過 40 分死當線。
             </p>
           </div>
         </div>
@@ -301,7 +301,7 @@ export default function ScoreCalculator() {
           <div className="bg-white p-3 rounded border border-red-100 text-center">
             <span className="text-gray-500 text-xs">平時 + 期末合計（60分佔比中）至少需拿</span>
             <div className="text-3xl font-bold text-red-600 my-1">
-              {neededWeighted.toFixed(1)} <span className="text-sm text-gray-400">分</span>
+              {Math.round(neededWeighted)} <span className="text-sm text-gray-400">分</span>
             </div>
             <p className="text-xs text-gray-500">
               即平時與期末平均各至少 <strong>{avgNeeded}</strong> 分，才能脫離死當
@@ -417,7 +417,7 @@ export default function ScoreCalculator() {
         <div className="space-y-2">
           <div className="flex justify-between text-sm">
             <span className="text-slate-500">目前已知積分</span>
-            <span className="font-bold text-slate-800">{knownScore.toFixed(1)} <span className="font-normal text-slate-400">/ 100</span></span>
+            <span className="font-bold text-slate-800">{Math.round(knownScore)} <span className="font-normal text-slate-400">/ 100</span></span>
           </div>
           <div className="h-3 w-full bg-slate-100 rounded-full overflow-hidden">
             <div
