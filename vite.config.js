@@ -3,5 +3,5 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
-  base: '/', // 自訂網域使用根路徑
+  base: '/Score_Check/', // GitHub Pages 預設路徑
 })
