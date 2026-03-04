@@ -4,52 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>菜菜撈撈計算機</title>
-    <meta name="description" content="菜菜撈撈專用！計算期末考需要考幾分才能及格或免補考的互動式工具" />
-    <meta name="custom-domain" content="m30wlin35.com" />
   </head>
-  <body class="bg-slate-100 min-h-screen">
-    <header class="py-6 text-center bg-white">
-      <h1 class="m-0 mb-2">歡迎來到 <span id="domain-text">自訂網域</span></h1>
-      <p class="m-0">
-        回首頁：
-        <a id="home-link" href="https://m30wlin35.com/">返回首頁</a>
-        ｜ 專案：
-        <a id="project-link" href="/Score_Check">Score_Check</a>
-      </p>
-    </header>
-    <main id="root" aria-label="成績計算工具"></main>
-    <script>
-      const domainMeta = document.querySelector('meta[name="custom-domain"]')
-      const domainText = document.getElementById('domain-text')
-      const metaContent = (domainMeta?.content || '').trim()
-      const domainPattern = /^[a-zA-Z0-9.-]+$/
-      const projectPath = '/Score_Check'
-      let domain = 'm30wlin35.com'
-      if (domainPattern.test(metaContent)) {
-        try {
-          new URL(`https://${metaContent}`)
-          domain = metaContent
-        } catch (err) {
-          console.error('Invalid custom domain, using fallback:', err)
-        }
-      }
-      const homeLink = document.getElementById('home-link')
-      const projectLink = document.getElementById('project-link')
-
-      if (domainText) {
-        domainText.textContent = domain
-      }
-      if (homeLink) {
-        homeLink.textContent = `返回 ${domain} 首頁`
-        homeLink.href = `https://${domain}/`
-        homeLink.setAttribute('title', `返回 ${domain} 首頁`)
-      }
-
-      if (projectLink) {
-        projectLink.href = `https://${domain}${projectPath}`
-        projectLink.setAttribute('title', `前往 ${domain}${projectPath} 成績計算工具`)
-      }
-    </script>
+  <body>
+    <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
