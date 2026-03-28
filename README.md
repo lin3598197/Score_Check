@@ -2,7 +2,7 @@
 
 菜菜撈撈專用！幫助計算期末考或平時成績需要幾分才能及格、免補考，以及是否有死當風險。
 
-🌐 **線上使用**：[https://lin3598197.github.io/Score_Check/](https://lin3598197.github.io/Score_Check/)
+🌐 **線上使用**：http://scorecheck.m30wlin35.com/
 
 ## 功能特色
 
@@ -44,9 +44,6 @@ npm install
 npm run dev
 ```
 
-## 部署
-
-已部署至 GitHub Pages：[https://lin3598197.github.io/Score_Check/](https://lin3598197.github.io/Score_Check/)
 
 ## 授權
 
